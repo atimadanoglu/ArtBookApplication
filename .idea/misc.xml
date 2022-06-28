@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/devel/Desktop/ArtBookApplication/app/src/main/res/layout/activity_main.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/devel/Desktop/ArtBookApplication/app/src/main/res/layout/art_book_row.xml" value="0.3859375" />
         <entry key="..\:/Users/devel/Desktop/ArtBookApplication/app/src/main/res/layout/fragment_art_book.xml" value="0.2980769230769231" />
+        <entry key="..\:/Users/devel/Desktop/ArtBookApplication/app/src/main/res/layout/fragment_art_details.xml" value="0.38697916666666665" />
       </map>
     </option>
   </component>
