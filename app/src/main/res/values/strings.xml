@@ -9,4 +9,5 @@
     <string name="enter_artist_name">Enter Artist Name</string>
     <string name="enter_art_release_year">Enter Art Release Year</string>
     <string name="save">Save</string>
+    <string name="search_image">Search Image</string>
 </resources>
