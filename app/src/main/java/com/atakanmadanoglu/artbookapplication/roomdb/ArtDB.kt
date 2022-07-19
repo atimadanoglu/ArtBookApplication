@@ -7,5 +7,5 @@ import androidx.room.RoomDatabase
     entities = [Art::class], version = 1
 )
 abstract class ArtDB: RoomDatabase() {
-
+    abstract fun artDao(): ArtDao
 }

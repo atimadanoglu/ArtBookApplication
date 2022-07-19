@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.atakanmadanoglu.artbookapplication.databinding.FragmentArtDetailsBinding
@@ -29,6 +30,13 @@ class ArtDetailsFragment : Fragment() {
             val action = ArtDetailsFragmentDirections.actionArtDetailsFragmentToImagesApiFragment()
             findNavController().navigate(action)
         }
+
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                findNavController().popBackStack()
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(callback)
     }
 
     override fun onDestroyView() {
