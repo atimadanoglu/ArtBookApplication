@@ -9,6 +9,10 @@ plugins {
 android {
     compileSdk 32
 
+    def apikeyPropertiesFile = rootProject.file("apikey.properties")
+    def apikeyProperties = new Properties()
+    apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
+
     defaultConfig {
         applicationId "com.atakanmadanoglu.artbookapplication"
         minSdk 24
@@ -26,6 +30,7 @@ android {
                         "room.expandProjection":"true"]
             }
         }
+        buildConfigField("String", "PIXABAY_API_KEY", apikeyProperties['PIXABAY_API_KEY'])
     }
 
     buildTypes {
