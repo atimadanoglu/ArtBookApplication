@@ -7,9 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.atakanmadanoglu.artbookapplication.databinding.FragmentArtBookBinding
+import com.bumptech.glide.RequestManager
+import javax.inject.Inject
 
 
-class ArtBookFragment : Fragment() {
+class ArtBookFragment @Inject constructor(
+    private val glide: RequestManager
+) : Fragment() {
 
     private var _binding: FragmentArtBookBinding? = null
     private val binding get() = _binding!!
