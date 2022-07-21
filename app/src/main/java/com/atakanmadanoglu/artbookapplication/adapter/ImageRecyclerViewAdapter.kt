@@ -10,9 +10,11 @@ import com.bumptech.glide.RequestManager
 import javax.inject.Inject
 
 class ImageRecyclerViewAdapter @Inject constructor(
-    private val glide: RequestManager,
-    private val imageClickListener: (url: String) -> Unit
+    private val glide: RequestManager
 ): ListAdapter<String, ImageRecyclerViewAdapter.ImageViewHolder>(ImageDiffUtil()) {
+
+    private var onItemClickListener: ((String) -> Unit)? = null
+
     class ImageViewHolder(private val binding: ImageRowBinding): RecyclerView.ViewHolder(binding.root) {
         companion object {
             fun inflateFrom(parent: ViewGroup): ImageViewHolder {
@@ -21,10 +23,12 @@ class ImageRecyclerViewAdapter @Inject constructor(
                 return ImageViewHolder(binding)
             }
         }
-        fun bind(url: String, glide: RequestManager, imageClickListener: (url: String) -> Unit) {
+        fun bind(url: String, glide: RequestManager, onItemClickListener: ((String) -> Unit)?) {
             binding.apply {
                 glide.load(url).into(imageFromApi)
-                imageClickListener(url)
+                root.setOnClickListener {
+                    onItemClickListener?.invoke(url)
+                }
             }
         }
     }
@@ -35,8 +39,13 @@ class ImageRecyclerViewAdapter @Inject constructor(
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
         val item = getItem(position)
-        holder.bind(item, glide, imageClickListener)
+        holder.bind(item, glide, onItemClickListener)
     }
+
+    fun setOnItemClickListener(listener: (String) -> Unit) {
+        onItemClickListener = listener
+    }
+
 }
 
 class ImageDiffUtil: DiffUtil.ItemCallback<String>() {

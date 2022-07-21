@@ -69,6 +69,7 @@ class ArtViewModel @Inject constructor(
         }
         val art = Art(name, artistName, yearInt, _selectedImage.value ?: "")
         insertArt(art)
+        setSelectedImage("")
         _insertArtMsg.postValue(Resource.success(art))
     }
 

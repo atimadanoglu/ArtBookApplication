@@ -1,11 +1,11 @@
 package com.atakanmadanoglu.artbookapplication.views
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -24,7 +24,7 @@ class ArtBookFragment @Inject constructor(
 
     private var _binding: FragmentArtBookBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: ArtViewModel by viewModels()
+    private lateinit var viewModel: ArtViewModel
 
     private val swipeCallBack = object: ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
         override fun onMove(
@@ -49,6 +49,7 @@ class ArtBookFragment @Inject constructor(
     ): View {
         // Inflate the layout for this fragment
         _binding = FragmentArtBookBinding.inflate(inflater, container, false)
+        viewModel = ViewModelProvider(requireActivity())[ArtViewModel::class.java]
         binding.artBookRecyclerView.adapter = artRecyclerViewAdapter
         subscribeObservers()
         ItemTouchHelper(swipeCallBack).attachToRecyclerView(binding.artBookRecyclerView)

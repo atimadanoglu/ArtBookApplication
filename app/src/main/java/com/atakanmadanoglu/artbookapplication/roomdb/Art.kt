@@ -9,6 +9,6 @@ data class Art(
     var artistName: String = "",
     var year: Int = 0,
     var imageUrl: String = "",
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     var id: Int = 0
 )
