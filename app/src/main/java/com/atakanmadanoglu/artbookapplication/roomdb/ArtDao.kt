@@ -12,7 +12,7 @@ interface ArtDao {
     @Delete
     suspend fun deleteArt(art: Art)
 
-    @Query("SELECT * FROM arts_table")
+    @Query("SELECT * FROM arts_table ORDER BY id DESC")
     fun observeArts(): LiveData<List<Art>>
 
 }
