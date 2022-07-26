@@ -22,7 +22,7 @@ class ArtDetailsFragment @Inject constructor(
 
     private var _binding: FragmentArtDetailsBinding? = null
     private val binding get() = _binding!!
-    private lateinit var viewModel: ArtViewModel
+    lateinit var viewModel: ArtViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

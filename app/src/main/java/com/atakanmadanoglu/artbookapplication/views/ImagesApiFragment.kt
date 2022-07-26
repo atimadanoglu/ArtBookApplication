@@ -20,12 +20,12 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class ImagesApiFragment @Inject constructor(
-    private val imageRecyclerViewAdapter: ImageRecyclerViewAdapter
+    val imageRecyclerViewAdapter: ImageRecyclerViewAdapter
 ): Fragment() {
 
     private var _binding: FragmentImagesApiBinding? = null
     private val binding get() = _binding!!
-    private lateinit var viewModel: ArtViewModel
+    lateinit var viewModel: ArtViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
