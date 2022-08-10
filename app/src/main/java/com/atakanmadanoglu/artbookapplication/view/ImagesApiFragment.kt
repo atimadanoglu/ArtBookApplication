@@ -1,4 +1,4 @@
-package com.atakanmadanoglu.artbookapplication.views
+package com.atakanmadanoglu.artbookapplication.view
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/artBookFragment"
-        android:name="com.atakanmadanoglu.artbookapplication.views.ArtBookFragment"
+        android:name="com.atakanmadanoglu.artbookapplication.view.ArtBookFragment"
         android:label="fragment_art_book"
         tools:layout="@layout/fragment_art_book" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/artDetailsFragment"
-        android:name="com.atakanmadanoglu.artbookapplication.views.ArtDetailsFragment"
+        android:name="com.atakanmadanoglu.artbookapplication.view.ArtDetailsFragment"
         android:label="fragment_art_details"
         tools:layout="@layout/fragment_art_details" >
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/imagesApiFragment"
-        android:name="com.atakanmadanoglu.artbookapplication.views.ImagesApiFragment"
+        android:name="com.atakanmadanoglu.artbookapplication.view.ImagesApiFragment"
         android:label="fragment_images_api"
         tools:layout="@layout/fragment_images_api" />
 </navigation>
