@@ -6,7 +6,7 @@ import com.atakanmadanoglu.artbookapplication.model.ImageResponse
 import com.atakanmadanoglu.artbookapplication.roomdb.Art
 import com.atakanmadanoglu.artbookapplication.util.Resource
 
-class FakeArtRepository: ArtRepositoryInterface {
+class FakeArtRepository: ArtRepository {
 
     private val arts = mutableListOf<Art>()
     private val artsLiveData = MutableLiveData<List<Art>>(arts)
@@ -23,7 +23,7 @@ class FakeArtRepository: ArtRepositoryInterface {
         return Resource.success(ImageResponse(listOf(), 0, 0))
     }
 
-    override fun getArt(): LiveData<List<Art>> {
+    override fun getArts(): LiveData<List<Art>> {
         return artsLiveData
     }
 

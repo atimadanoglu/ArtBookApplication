@@ -8,9 +8,6 @@ import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.filters.MediumTest
 import com.atakanmadanoglu.artbookapplication.R
 import com.atakanmadanoglu.artbookapplication.launchFragmentInHiltContainer
-import com.atakanmadanoglu.artbookapplication.views.ArtBookFragment
-import com.atakanmadanoglu.artbookapplication.views.ArtBookFragmentDirections
-import com.atakanmadanoglu.artbookapplication.views.ArtFragmentFactory
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import org.junit.Before

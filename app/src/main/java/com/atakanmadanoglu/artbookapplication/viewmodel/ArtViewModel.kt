@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.atakanmadanoglu.artbookapplication.model.ImageResponse
-import com.atakanmadanoglu.artbookapplication.repo.ArtRepositoryInterface
+import com.atakanmadanoglu.artbookapplication.repo.ArtRepository
 import com.atakanmadanoglu.artbookapplication.roomdb.Art
 import com.atakanmadanoglu.artbookapplication.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,10 +14,10 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ArtViewModel @Inject constructor(
-    private val repository: ArtRepositoryInterface
+    private val repository: ArtRepository
 ) : ViewModel() {
 
-    val artList = repository.getArt()
+    val artList = repository.getArts()
 
     private val _images = MutableLiveData<Resource<ImageResponse>>()
     val images: LiveData<Resource<ImageResponse>> get() = _images
