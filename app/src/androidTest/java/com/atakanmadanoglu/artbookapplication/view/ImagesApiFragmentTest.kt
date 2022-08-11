@@ -14,8 +14,6 @@ import com.atakanmadanoglu.artbookapplication.getOrAwaitValue
 import com.atakanmadanoglu.artbookapplication.launchFragmentInHiltContainer
 import com.atakanmadanoglu.artbookapplication.repo.FakeArtRepository
 import com.atakanmadanoglu.artbookapplication.viewmodel.ArtViewModel
-import com.atakanmadanoglu.artbookapplication.views.ArtFragmentFactory
-import com.atakanmadanoglu.artbookapplication.views.ImagesApiFragment
 import com.google.common.truth.Truth.assertThat
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest

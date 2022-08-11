@@ -1,4 +1,4 @@
-package com.atakanmadanoglu.artbookapplication.views
+package com.atakanmadanoglu.artbookapplication.view
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory
